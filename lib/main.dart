@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tractor_monitor_app/view/screens/home.dart';
-import 'package:tractor_monitor_app/view/widgets/theme.dart';
+import 'package:tractor_monitor_app/view/widgets/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       valueListenable: AppTheme.themeNotifier,
       builder: (context, themeMode, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.baseTheme(),
           themeMode: themeMode,
           home: const HomeScreen(),
         );

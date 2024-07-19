@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tractor_monitor_app/util/constants.dart';
 
 class AppTheme {
 
@@ -13,21 +14,20 @@ class AppTheme {
   }
 
 
-  static ThemeData baseTheme(bool isDark) {
+  static ThemeData baseTheme() {
     return ThemeData(
       useMaterial3: true,
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
+        elevation: 10,
+        backgroundColor: DARK_GREEN,
+        foregroundColor: WHITE,
       ),
       colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.red,
-          brightness: isDark ? Brightness.dark : Brightness.light,
-          primary: Colors.red,
-          secondary: Colors.black45,
-          tertiary: Colors.white,
-          onError: Colors.redAccent,
-          primaryContainer: Colors.red
+          seedColor: DARK_GREEN,
+          brightness: themeNotifier.value == ThemeMode.dark ? Brightness.dark : Brightness.light,
+          primary: DARK_GREEN,
+          secondary: WHITE,
+          onError: DARK_RED,
       ),
     );
   }
