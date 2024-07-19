@@ -4,8 +4,9 @@ class MenuCard extends StatefulWidget {
 
   final Widget? icon;
   final String label;
+  final String route;
 
-  const MenuCard({super.key, required this.label, this.icon});
+  const MenuCard({super.key, required this.label, this.icon, required this.route});
 
   @override
   State<MenuCard> createState() => _MenuCardState();
@@ -14,10 +15,12 @@ class MenuCard extends StatefulWidget {
 class _MenuCardState extends State<MenuCard> {
 
   late String label;
+  late String route;
   late Widget? icon;
 
   @override
   void initState() {
+    route = widget.route;
     icon = widget.icon;
     label = widget.label;
     super.initState();
@@ -67,7 +70,7 @@ class _MenuCardState extends State<MenuCard> {
   }
 
   void onClick() {
-
+    Navigator.of(context).pushNamed(route);
   }
 
 }

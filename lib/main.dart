@@ -23,6 +23,12 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.baseTheme(),
           themeMode: themeMode,
           home: const HomeScreen(),
+          routes: {
+            'cadastro maquina': (context) => MachineRecordScreen(),
+            'manutencao': (context) => MaintenanceRecordScreen(),
+            'estoque': (context) => StockScreen(),
+            'lista maquinas': (context) => MachinesOverviewScreen()
+          },
         );
       },
     );

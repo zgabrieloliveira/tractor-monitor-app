@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildUi() {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Monitor de Maquinas',),
+      appBar: const CustomAppBar(title: 'Monitor de Máquinas',),
       // bottomNavigationBar: BottomNavigationBarWidget(selectedIndex: selectedPage, onItemSelected: (item) {}),
       body: SingleChildScrollView(
         child: Padding(
@@ -39,10 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
             childAspectRatio: 2.0, // Proporção largura/altura dos itens
             // Ajuste para que o terceiro item ocupe 2 blocos
             children: [
-              MenuCard(label: 'Cadastrar Máquina', icon: tractor),
-              MenuCard(label: 'Registrar Manutenção', icon: maintenance),
-              MenuCard(label: 'Atualizar Estoque', icon: stock),
-              MenuCard(label: 'Consultar Máquinas', icon: lens),
+              MenuCard(label: 'Cadastrar Máquina', icon: tractor, route: 'cadastro maquina'),
+              MenuCard(label: 'Registrar Manutenção', icon: maintenance, route: 'manutencao'),
+              MenuCard(label: 'Atualizar Estoque', icon: stock, route: 'estoque'),
+              MenuCard(label: 'Consultar Máquinas', icon: lens, route: 'lista maquinas'),
             ],
           ),
         ),

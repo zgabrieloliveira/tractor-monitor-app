@@ -16,6 +16,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
+
   @override
   Widget build(BuildContext context) {
     return _buildAppBar();
@@ -26,7 +27,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       centerTitle: true,
       toolbarHeight: 75,
-      automaticallyImplyLeading: false,
+      // leading: IconButton(onPressed: () => Navigator.of(context).pop(), icon: const Icon(Icons.arrow_back)),
+      automaticallyImplyLeading: widget.title != 'Monitor de Máquinas',
       title: Text(
         widget.title,
         style: const TextStyle(
@@ -34,6 +36,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           fontWeight: FontWeight.bold,
         ),
       ),
+
       actions: [
         IconButton(
           onPressed: () => AppTheme.switchTheme(),
