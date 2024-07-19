@@ -19,3 +19,17 @@ Image maintenance = Image.asset(
   height: 80,
   fit: BoxFit.cover,
 );
+
+Image stock = Image.asset(
+  'assets/icons/stock.png',
+  width: 80,
+  height: 80,
+  fit: BoxFit.cover,
+);
+
+Image lens = Image.asset(
+  'assets/icons/lens.png',
+  width: 80,
+  height: 80,
+  fit: BoxFit.cover,
+);

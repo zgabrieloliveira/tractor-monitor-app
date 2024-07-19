@@ -26,20 +26,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildUi() {
     return Scaffold(
-      appBar: const CustomAppBar(),
-      bottomNavigationBar: BottomNavigationBarWidget(selectedIndex: selectedPage, onItemSelected: (item) {}),
+      appBar: const CustomAppBar(title: 'Monitor de Maquinas',),
+      // bottomNavigationBar: BottomNavigationBarWidget(selectedIndex: selectedPage, onItemSelected: (item) {}),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
+          padding: const EdgeInsets.all(20),
+          child: GridView.count(
+            shrinkWrap: true,
+            crossAxisCount: 2, // Quantidade de colunas desejada
+            mainAxisSpacing: 20, // Espaçamento entre os itens na vertical
+            crossAxisSpacing: 20, // Espaçamento entre os itens na horizontal
+            childAspectRatio: 2.0, // Proporção largura/altura dos itens
+            // Ajuste para que o terceiro item ocupe 2 blocos
             children: [
-              MenuCard(label: 'Cadastrar Veiculo', icon: tractor),
-              SizedBox(height: 15),
-              MenuCard(label: 'Registrar Manutencao', icon: maintenance)
-            ]
+              MenuCard(label: 'Cadastrar Máquina', icon: tractor),
+              MenuCard(label: 'Registrar Manutenção', icon: maintenance),
+              MenuCard(label: 'Atualizar Estoque', icon: stock),
+              MenuCard(label: 'Consultar Máquinas', icon: lens),
+            ],
           ),
         ),
-      )
+      ),
     );
   }
+
+
 }

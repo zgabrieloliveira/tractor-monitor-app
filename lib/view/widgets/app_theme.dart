@@ -27,6 +27,7 @@ class AppTheme {
           brightness: themeNotifier.value == ThemeMode.dark ? Brightness.dark : Brightness.light,
           primary: DARK_GREEN,
           secondary: WHITE,
+          tertiary: ACCENT_GREEN,
           onError: DARK_RED,
       ),
     );

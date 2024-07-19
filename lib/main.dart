@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tractor_monitor_app/view/screens/home.dart';
+import 'package:tractor_monitor_app/view/screens/machine_record.dart';
+import 'package:tractor_monitor_app/view/screens/machines_overview.dart';
+import 'package:tractor_monitor_app/view/screens/maintenance_record.dart';
+import 'package:tractor_monitor_app/view/screens/stock.dart';
 import 'package:tractor_monitor_app/view/widgets/app_theme.dart';
 
 void main() {
