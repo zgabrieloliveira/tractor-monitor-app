@@ -1,4 +1,7 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tractor_monitor_app/controller/machine_controller.dart';
 import 'package:tractor_monitor_app/view/screens/home.dart';
 import 'package:tractor_monitor_app/view/screens/machine_record.dart';
 import 'package:tractor_monitor_app/view/screens/machines_overview.dart';
@@ -7,7 +10,7 @@ import 'package:tractor_monitor_app/view/screens/stock.dart';
 import 'package:tractor_monitor_app/view/widgets/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(DevicePreview(builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,17 +21,25 @@ class MyApp extends StatelessWidget {
     return ValueListenableBuilder(
       valueListenable: AppTheme.themeNotifier,
       builder: (context, themeMode, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.baseTheme(),
-          themeMode: themeMode,
-          home: const HomeScreen(),
-          routes: {
-            'cadastro maquina': (context) => MachineRecordScreen(),
-            'manutencao': (context) => MaintenanceRecordScreen(),
-            'estoque': (context) => StockScreen(),
-            'lista maquinas': (context) => MachinesOverviewScreen()
-          },
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<MachineController>(
+                create: (_) => MachineController()),
+          ],
+          child: MaterialApp(
+            locale: DevicePreview.locale(context),
+            builder: DevicePreview.appBuilder,
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.baseTheme(),
+            themeMode: themeMode,
+            home: const HomeScreen(),
+            routes: {
+              'cadastro maquina': (context) => MachineRecordScreen(),
+              'manutencao': (context) => MaintenanceRecordScreen(),
+              'estoque': (context) => StockScreen(),
+              'lista maquinas': (context) => MachinesOverviewScreen()
+            },
+          ),
         );
       },
     );

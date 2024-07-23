@@ -2,16 +2,15 @@ import 'package:tractor_monitor_app/model/product_service.dart';
 
 class HidrolicSystem extends ProductService {
 
-  double amount;
-  double filterCost;
-  double oilCost;
+  ProductService oil;
+  ProductService filter;
 
-  HidrolicSystem(this.amount, this.oilCost, this.filterCost,double cost, String name, int id)
+  HidrolicSystem(this.oil, this.filter, double cost, String name, String id)
       : super(cost, name, id);
 
   @override
   void evaluate(double value) {
-    cost += oilCost + filterCost;
+    cost += oil.cost + filter.cost;
   }
 
 }

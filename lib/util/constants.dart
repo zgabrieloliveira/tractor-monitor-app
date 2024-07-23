@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 const DARK_GREEN = Color(0xff098951);
 const DARK_RED = Color(0xffc81818);
+const ORANGE = Color(0xfff57a14);
 const WHITE = Color(0xffebf1ee);
 const ACCENT_GREEN = Color(0xff0eb069);
+const FLOURISHING_GREEN = Color(0xff6fcf25);
 
 Image tractor = Image.asset(
   'assets/icons/tractor.png',
@@ -32,4 +34,11 @@ Image lens = Image.asset(
   width: 80,
   height: 80,
   fit: BoxFit.cover,
+);
+
+Image not_found = Image.asset(
+  'assets/icons/not_found.png',
+  width: 160,
+  height: 160,
+  fit: BoxFit.contain,
 );

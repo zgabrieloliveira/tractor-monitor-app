@@ -5,6 +5,6 @@ class Motor extends ProductService {
 
   OilSystem oilSystem;
 
-  Motor(this.oilSystem, double cost, String name, int id) : super(cost, name, id);
+  Motor(this.oilSystem, double cost, String name, String id) : super(cost, name, id);
 
 }

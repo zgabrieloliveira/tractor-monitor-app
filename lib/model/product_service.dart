@@ -4,7 +4,7 @@ class ProductService implements Buyable {
 
   double cost;
   String name;
-  int id;
+  String id;
 
   ProductService(this.cost, this.name, this.id);
 

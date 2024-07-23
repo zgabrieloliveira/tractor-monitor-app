@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tractor_monitor_app/view/widgets/app_bar.dart';
 
 class MaintenanceRecordScreen extends StatefulWidget {
-  const MaintenanceRecordScreen({super.key});
+
+  final String? maintenanceName;
+  const MaintenanceRecordScreen({super.key, this.maintenanceName});
 
   @override
   State<MaintenanceRecordScreen> createState() => _MaintenanceRecordScreenState();
